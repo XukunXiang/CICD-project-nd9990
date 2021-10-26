@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: arn:aws:s3:::udacity-microservice-365504873011-dev
+  AWS_PROFILE: default
+  AWS_REGION: us-east-1
+  JWT_SECRET: testing
+  POSTGRESS_DB: postgres
+  POSTGRESS_HOST: udacity-microservice-365504873011-dev.cdfhdotf1ujv.us-east-1.rds.amazonaws.com
+  URL: http://a7843e80c43a44374b37e8b3e1109e0f-1245963321.us-east-1.elb.amazonaws.com:8100
+metadata:
+  name: env-config
