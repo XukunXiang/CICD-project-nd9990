@@ -1,0 +1,89 @@
+Name:              backend-feed
+Namespace:         default
+Labels:            service=backend-feed
+Annotations:       <none>
+Selector:          service=backend-feed
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.178.154
+IPs:               10.100.178.154
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         192.168.45.118:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              backend-user
+Namespace:         default
+Labels:            service=backend-user
+Annotations:       <none>
+Selector:          service=backend-user
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.155.178
+IPs:               10.100.155.178
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     frontend
+Namespace:                default
+Labels:                   service=frontend
+Annotations:              <none>
+Selector:                 service=frontend
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.100.232.106
+IPs:                      10.100.232.106
+LoadBalancer Ingress:     a3ffb51da5298431087b8b8d5fc9fc8a-1152676786.us-east-1.elb.amazonaws.com
+Port:                     <unset>  8100/TCP
+TargetPort:               80/TCP
+NodePort:                 <unset>  30854/TCP
+Endpoints:                192.168.31.173:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.0.1
+IPs:               10.100.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         192.168.125.242:443,192.168.72.155:443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     reverseproxy
+Namespace:                default
+Labels:                   service=reverseproxy
+Annotations:              <none>
+Selector:                 service=reverseproxy
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.100.94.71
+IPs:                      10.100.94.71
+LoadBalancer Ingress:     ad142fc6856bc4131a955e7ed99f7afd-1279200261.us-east-1.elb.amazonaws.com
+Port:                     8080  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 8080  32181/TCP
+Endpoints:                192.168.27.127:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:
+  Type    Reason                Age    From                Message
+  ----    ------                ----   ----                -------
+  Normal  EnsuringLoadBalancer  9m42s  service-controller  Ensuring load balancer
+  Normal  EnsuredLoadBalancer   9m40s  service-controller  Ensured load balancer
